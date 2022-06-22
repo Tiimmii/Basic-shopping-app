@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if search %}
+        {% for object in object %}
+        <div class="row">
+            <div class="col">
+                
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{ object.image }}" alt="Card image cap">
+                    <div class="card-body">
+                      <a style=" text-decoration: none, ;color: black;"href="#"><h5 class="card-title">{{object.name}}</h5></a>
+                      <p class="card-text">${{object.price}}</p>
+                      <p class="card-text">stock:{{object.stock}}</p>
+                      <a href="#" class="btn btn-primary">add to cart</a>
+                        
+                    </div>
+                  </div>
+                   
+            </div>
+        </div>
+        
+        {% endfor %}
+    {% else %}
+        <h1>You forgot to search lol :)</h1>
+    {% endif %}
+
+
+    {% endblock %}
